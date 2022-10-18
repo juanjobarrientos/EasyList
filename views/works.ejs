@@ -1,0 +1,19 @@
+<%-include ("partials/header")%>
+    <main>
+        <div style="height:95vh; width:100%; background-color:#f2f2f2;">
+            <%-include ("partials/navigation")%>
+              <div class="container mt-5">
+              <%for (i=0; i< result.length;i++){%>
+                <div class="card w-75 mb-2">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= result[i].tarea%></h5>
+                    <p class="card-text">Se acaba el: <%= result[i].fecha%></p>
+                    <a href="/edit/<%= result[i].id%>" class="btn btn-primary">Editar</a>
+                    <a href="/delete/<%= result[i].id %>" class="btn btn-danger">Borrar</a>
+                  </div>
+                </div>
+              <% }%>  
+              </div>
+        </div>
+    </main>
+<%- include ("partials/footer")%>
